@@ -1,0 +1,59 @@
+/* Navbar Styling */
+
+.navbar {
+    margin-bottom:0px;
+    background-color: #F2E422;
+    border-bottom:none;
+}
+
+.navbar-brand {
+    color:#000000 !important;
+    font-weight:bold;
+    font-size:2em;
+}
+
+.navbar-toggle {
+    border:none;   
+}
+
+/* Headline/Hero unit */
+
+.hero {
+    min-width:100%;
+    min-height:150px;
+    
+    color:#FFFFFF;
+    background-color:#F2295F;
+    text-align:center;
+    
+    padding-top:10px;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+
+.hero.bsod {
+    background-color:#0000FF !important;
+}
+
+.hero h1 {
+    font-weight:bolder;    
+    font-size:36pt;
+}
+
+/* Homepage form items */
+#pastebox {
+    min-width: 100%;
+    min-height: 50vh;
+    resize:none;
+}
+
+#titlebox {
+    min-width:15vw;   
+}
+
+/* Misc */
+
+.sharelink {
+    word-wrap: normal;
+    word-break: break-all;
+}

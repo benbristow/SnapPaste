@@ -1,0 +1,5 @@
+#Disable robots. I need to get round for this to work on the view pages only.
+#I'm using this because if you paste a link into FB the automatic scraper thing that gets metadata
+#'clicks' the pastes meaning they gets deleted before the recipient sees them.
+User-agent: *
+Disallow: /
