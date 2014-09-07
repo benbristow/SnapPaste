@@ -9,6 +9,7 @@ Basically a pastebin, but as soon as someone sees the paste it permanently gets 
 What is it made in?
 -------------------
 PHP using the CodeIgniter Framework.
+Bootstrap for front-end (Uses Bootstrap CDN)
 
 How to install?
 --------------------
@@ -24,3 +25,7 @@ License?
 -----------
 GNU GPL v2
 
+Acknowledgements
+---------------------
+
+* Markdown support via Jon Labelle's ci-markdown library. https://github.com/jonlabelle/ci-markdown
