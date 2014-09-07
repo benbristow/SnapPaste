@@ -39,6 +39,8 @@
 */
 
 $route['default_controller'] = "app";
+$route['app/submit'] = "app/submit";
+$route['(:any)'] = "app/view/$1";
 $route['404_override'] = '';
 
 

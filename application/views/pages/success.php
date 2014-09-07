@@ -1,6 +1,6 @@
 <div class="hero">
     <h1>Success! Your sexy share URL is below. <h1>
-    <h3 class="sharelink"><?=base_url('app/view/'. $pasteid);?></h3>
+    <h3 class="sharelink"><?=base_url('/'. $pasteid);?></h3>
 </div>
 <div class="container">
 <div class="page-header">
