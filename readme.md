@@ -14,9 +14,11 @@ How to install?
 --------------------
 Make sure you have a PHP compatible web server and MySQL installed. Clone to your web server.
 
-Import database.sql to your MySQL server.
-Edit application/config/database.php with your MySQL database/user information.
-Edit application/config/config.php , find 'encryption key', generate a random key and paste it in there.
+* Import database.sql to your MySQL server.
+
+* Edit application/config/database.php with your MySQL database/user information.
+
+* Edit application/config/config.php , find 'encryption key', generate a random key and paste it in there.
 
 License?
 -----------
