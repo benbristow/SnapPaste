@@ -13,7 +13,7 @@ Bootstrap for front-end (Uses Bootstrap CDN)
 
 How to install?
 --------------------
-Make sure you have a PHP compatible web server and MySQL installed. Clone to your web server.
+Make sure you have a PHP compatible web server (with mod_rewrite/htaccess support) and MySQL installed. Clone to your web server.
 
 * Import database.sql to your MySQL server.
 
