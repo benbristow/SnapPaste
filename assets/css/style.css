@@ -53,6 +53,11 @@
 
 /* Misc */
 
+.confirmbtn {
+    width:100%;
+    font-size:32pt;
+}
+
 .sharelink {
     word-wrap: normal;
     word-break: break-all;

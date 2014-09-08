@@ -1,7 +1,7 @@
 <?php
 class App extends CI_Controller {
     public function index() {
-        $this->loadPage("home", array("title" => "Home"));
+        return $this->loadPage("home", array("title" => "Home"));
     }
     
     public function submit() {
@@ -47,31 +47,36 @@ class App extends CI_Controller {
     }
     
     public function view($id) {
-        //Make sure ID is supplied
-        if(!$id) {
-            return $this->showErrorPage("No paste ID supplied");   
-        }
-        
-        //Get Paste information
-        $query = $this->db->get_where('pastes', array('pasteid' => $id));
-        
-        //If no paste info, show error
-        if($query->num_rows == 0) {
-            return $this->showErrorPage("Paste does not exist. It has probably already been viewed.");   
-        }
-        
-        //Get paste information
-        $pasteinfo = $query->row();
-        $pastetitle = $pasteinfo->title;
-        $pastecontents = $pasteinfo->contents;
-        $pastedate = $pasteinfo->date;
-        
-        //Now delete the paste info.
-        $this->db->delete('pastes', array('pasteid' => $id));
-        
-        //Now show to the user
-        $data = array('title' => $pastetitle, 'pastetitle' => $pastetitle, 'pastecontents' => $pastecontents, 'pastedate' => $pastedate);
-        return $this->loadPage("view", $data, true);
+            //Make sure ID is supplied
+            if(!$id) {
+                return $this->showErrorPage("No paste ID supplied");   
+            }
+
+            //Get Paste information
+            $query = $this->db->get_where('pastes', array('pasteid' => $id));
+
+            //If no paste info, show error
+            if($query->num_rows == 0) {
+                return $this->showErrorPage("Paste does not exist. It has probably already been viewed.");   
+            }
+
+            if($this->input->post('show') == "true") {
+                //Get paste information
+                $pasteinfo = $query->row();
+                $pastetitle = $pasteinfo->title;
+                $pastecontents = $pasteinfo->contents;
+                $pastedate = $pasteinfo->date;
+
+                //Now delete the paste info.
+                $this->db->delete('pastes', array('pasteid' => $id));
+
+                //Now show to the user
+                $data = array('title' => $pastetitle, 'pastetitle' => $pastetitle, 'pastecontents' => $pastecontents, 'pastedate' => $pastedate);
+                return $this->loadPage("view", $data, true);
+            } else {
+                //Show confirm page (to stop Facebook chat and stuff deleting automatically).
+                return $this->loadPage("confirm", array("title" => "Confirm View"));
+            }
     }
     
     private function loadPage($page, $data, $nocache = false) {
